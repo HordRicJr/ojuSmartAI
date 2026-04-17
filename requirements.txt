@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+opencv-python-headless
+Pillow
+numpy
+torch
+torchvision
+python-multipart
+transformers
+timm
+huggingface_hub
+accelerate
+facenet-pytorch
