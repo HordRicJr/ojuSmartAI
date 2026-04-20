@@ -30,6 +30,10 @@ async def lifespan(application: FastAPI) -> AsyncGenerator[None, None]:
     application.state.emotion_pipeline = models["emotion_pipeline"]
     application.state.blip_processor = models["blip_processor"]
     application.state.blip_model = models["blip_model"]
+    application.state.blip_vqa_processor = models["blip_vqa_processor"]
+    application.state.blip_vqa_model = models["blip_vqa_model"]
+    application.state.detr_processor = models["detr_processor"]
+    application.state.detr_model = models["detr_model"]
 
     logger.info("Tous les modeles sont charges. Service pret.")
 
@@ -39,6 +43,8 @@ async def lifespan(application: FastAPI) -> AsyncGenerator[None, None]:
         del application.state.signature_model
         del application.state.blip_model
         del application.state.emotion_pipeline
+        del application.state.blip_vqa_model
+        del application.state.detr_model
 
         device: torch.device = models["device"]
         if device.type == "cuda":

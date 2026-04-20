@@ -9,6 +9,9 @@ class Settings(BaseSettings):
     debug: bool = False
     embedding_dimension: int = 512
     image_target_size: int = 224
+    signature_similarity_threshold: float = 0.92
+    scene_detection_threshold: float = 0.7
+    scene_max_objects: int = 10
 
     model_config = SettingsConfigDict(
         env_file=".env",

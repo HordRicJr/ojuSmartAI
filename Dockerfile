@@ -22,6 +22,9 @@ ENV APP_VERSION="1.0.0"
 ENV DEBUG=false
 ENV EMBEDDING_DIMENSION=512
 ENV IMAGE_TARGET_SIZE=224
+ENV SIGNATURE_SIMILARITY_THRESHOLD=0.92
+ENV SCENE_DETECTION_THRESHOLD=0.7
+ENV SCENE_MAX_OBJECTS=10
 
 COPY --chown=user ./requirements.txt requirements.txt
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
